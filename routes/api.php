@@ -25,3 +25,5 @@ Route::post('students/{id}/select_course', 'StudentController@selectCourse');
 Route::resource('courses', 'CourseController')->only([
     'index', 'show', 'store'
 ]);
+
+Route::resource('httpbin', 'HttpbinController')->only(['index']);

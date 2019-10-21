@@ -20,3 +20,7 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 Route::resource('students', 'StudentController')->only([
     'index', 'show', 'store'
 ]);
+
+Route::resource('courses', 'CourseController')->only([
+    'index', 'show', 'store'
+]);

@@ -34,4 +34,16 @@ class StudentTest extends TestCase
         $response->assertStatus(200);
         $response->assertJson(['name' => $student->name]);
     }
+
+    public function testSelectCourse()
+    {
+        $student = factory(\App\Student::class)->create();
+        $course = factory(\App\Course::class)->create();
+
+        $response = $this->post("/api/students/{$student->id}/select_course", [
+            'course_id' => $course->id,
+        ]);
+
+        $response->assertStatus(204);
+    }
 }

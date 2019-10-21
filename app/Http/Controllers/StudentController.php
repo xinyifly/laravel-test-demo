@@ -37,4 +37,12 @@ class StudentController extends Controller
     {
         return \App\Student::findOrFail($id);
     }
+
+    public function selectCourse(Request $request) {
+        $student = \App\Student::findOrFail($request->id);
+        $course = \App\Course::findOrFail($request->course_id);
+
+        $student->selectCourse($course);
+        return response(null, 204);
+    }
 }

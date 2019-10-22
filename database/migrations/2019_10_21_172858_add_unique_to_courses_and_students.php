@@ -29,10 +29,10 @@ class AddUniqueToCoursesAndStudents extends Migration
     public function down()
     {
         Schema::table('students', function (Blueprint $table) {
-            $table->dropUnique('name');
+            $table->dropUnique('students_name_unique');
         });
         Schema::table('courses', function (Blueprint $table) {
-            $table->dropUnique('name');
+            $table->dropUnique('courses_name_unique');
         });
     }
 }
